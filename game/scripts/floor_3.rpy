@@ -15,18 +15,21 @@
             jump hide
         "달린다 (이대로 도망치는 수밖에 없어)":
             jump bad_ending_3
-        "돌아본다 (놈의 정체를 직접 확인한다)" if flag_clue_1 and flag_clue_2 and flag_clue_3:
-            jump turn_around
 
 label hide:
     n "괴물이 지나갔다."
     n "심장이 터질 듯이 뛰고, 몸이 떨렸다."
-    jump floor_2
+    
+    menu:
+        "그대로 나아간다 (숨을 고르고, 다음 층으로 간다)":
+            jump floor_2
+        "돌아본다 (놈의 정체를 직접 확인한다)" if flag_clue_1 and flag_clue_2 and flag_clue_3:
+            jump turn_around
 
 label turn_around:
-    n "흐릿한 형체가 엄마처럼 보였다."
-    n "괴물이 잠시 멈칫하는 것을 보았다."
-    n "이 순간을 놓치지 않고, 나는 재빨리 몸을 숨겼다."
+    "복도 끝에 흐릿한 형체가 보인다."
+    "등을 돌리고 있는 모습은... 엄마처럼 보였다."
+    "괴물이 잠시 멈칫하는 것을 보았다."
 
     $ renpy.sound.play(sfx_clue_gain)
     $ flag_clue_4 = True

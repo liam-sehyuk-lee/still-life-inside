@@ -1,4 +1,26 @@
-﻿label real_world_7:
+﻿screen real_6_note:
+    frame:
+        background "#00000080"
+        padding (100, 100)
+        xalign 0.5
+        yalign 0.5
+        
+        text "잊지 말고 꼭 챙겨먹으렴...":
+            size 50
+            color "#ffffff"
+
+screen true_ending_text():
+    frame:
+        background "#00000080"
+        xfill True
+        yfill True
+        text "트루엔딩: 마주하다":
+            size 40
+            color "#ffffff"
+            xalign 0.5
+            yalign 0.5
+
+label real_world_7:
     scene bg_7f_reality with fade
     
     n "나는 그 문을 열 수 있었을까?"
@@ -15,7 +37,11 @@ label real_world_6:
     
     n "이건... 내가 '암호'라고 착각했던 그 쪽지."
     n "사실은... 엄마가 남긴, 그저 평범한 메모였다."
-    "쪽지 내용: '죽이랑 물이랑 같이 두었어요. 잠 많이 자요.'"
+
+    hide window
+    show screen real_6_note with dissolve
+    pause
+    hide screen real_6_note with dissolve
     
     n "나는... 이걸 해석하려 들었지. 괴물의 지시처럼."
     
@@ -47,7 +73,8 @@ label real_world_3:
     n "나는 그날, 문을 열지 않았다."
     n "엄마는 아무 말 없이 몇 분을 서 있었고,"
     n "결국... 돌아섰다."
-    n "나는 무서웠다. 밖이 아니라, 안에서부터."
+    n "나는 무서웠다."
+    n "밖이 아니라, 안에서부터."
     
     jump real_world_2
 
@@ -78,6 +105,11 @@ label true_ending:
     n "괴물은, 밖에 있던 게 아니었다."
     n "...괜찮아. 지금은... 정말 괜찮아."
     
+    hide window
+    show screen true_ending_text with dissolve
     $ renpy.music.play(bgm_ending)
+    
+    pause
+    hide screen true_ending_text with dissolve
     
     return

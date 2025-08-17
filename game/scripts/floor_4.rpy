@@ -1,4 +1,17 @@
-﻿label floor_4:
+﻿screen floor_4_recorder_dialogue:
+    frame:
+        background "#00000080"
+        padding (100, 100)
+        xalign 0.5
+        yalign 0.5
+        
+        text """나는 괜찮아... 괜찮다고 했잖아...
+문은... 문은 열면 안 돼.
+열지 마. 듣고 있지? 제발... 듣고 있어줘...""":
+            size 50
+            color "#ffffff"
+
+label floor_4:
     scene bg_4f_mental with dissolve
     
     n "여긴 조용하다."
@@ -19,9 +32,12 @@
 
 label play_recorder:
     # $ renpy.sound.play(sfx_voice_recorder)
-    "나는 괜찮아... 괜찮다고 했잖아..."
-    "문은... 문은 열면 안 돼."
-    "열지 마. 듣고 있지? 제발... 듣고 있어줘..."
+    "녹음기를 재생하자, 4층 전체를 울리는 목소리가 들려왔다."
+
+    hide window
+    show screen floor_4_recorder_dialogue with dissolve
+    pause
+    hide screen floor_4_recorder_dialogue with dissolve
     
     n "이 목소리... 나잖아?"
     n "언제, 어디서... 이걸 녹음했지?"

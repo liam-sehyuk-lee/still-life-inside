@@ -1,9 +1,27 @@
-﻿label floor_2:
+﻿screen floor_2_comment_screen:
+    frame:
+        background "#00000080"
+        padding (100, 100)
+        xalign 0.5
+        yalign 0.5
+        
+        text """나도 그들에게 사육당하고 있어.
+여긴 ZONE 12. 누구 있나요?
+함께 저항합시다.""":
+            size 50
+            color "#ffffff"
+
+label floor_2:
     scene bg_2f_mental with dissolve
     
-    "나도 그들에게 사육당하고 있어."
-    "여긴 ZONE 12. 누구 있나요?"
-    "함께 저항합시다."
+    "익숙한 복도 끝, 낡은 방이 하나 있다."
+    "안으로 들어가자, 전원이 켜진 채 빛을 내는 모니터 여러 대가 보인다."
+    "나는 홀린 듯이 화면 앞으로 다가갔다."
+
+    hide window
+    show screen floor_2_comment_screen with dissolve
+    pause
+    hide screen floor_2_comment_screen with dissolve
     
     n "익숙하다."
     n "너무 익숙해서..."

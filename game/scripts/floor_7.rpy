@@ -6,7 +6,7 @@ label floor_7:
     # $ renpy.sound.play(sfx_footsteps_creeping, loop=False)
     # $ renpy.sound.play(sfx_clock_ticking, loop=True)
 
-    n "네가 움직이면, 놈도 반응해. 그러니까... 조용히 기다려야 해."
+    m "네가 움직이면, 놈도 반응해. 그러니까... 조용히 기다려야 해."
     n "...그런데 오늘은 느낌이 다르다."
     n "문 너머의 그림자가 망설인다."
     n "식관을 밀어 넣는 속도가 느려졌다."

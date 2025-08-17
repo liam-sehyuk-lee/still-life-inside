@@ -12,7 +12,7 @@
     
     menu:
         "문을 연다 (더는 견딜 수 없어)":
-            jump normal_ending
+            jump ending_normal
         "되돌아본다 (...내가 본 건 진짜였을까?)":
             jump turn_back
 
@@ -40,7 +40,7 @@ label turn_back:
         jump ending_flickering_memory
     else:
         # 플래그가 0개일 경우, 일반 엔딩으로 갑니다.
-        jump normal_ending
+        jump ending_normal
     
 label true_ending_route:
     # 진엔딩 루트 해금

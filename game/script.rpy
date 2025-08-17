@@ -3,8 +3,8 @@
 # image 문을 사용해 이미지를 정의합니다.
 
 # 게임에서 사용할 캐릭터를 정의합니다.
-define n = Character(None, what_prefix='"', what_suffix='"')
-define m = Character('내 속의 목소리', color="#888888")
+define n = Character(None, what_prefix='"', what_suffix='"', what_color="#87CEEB")
+define m = Character('내 속의 목소리', color="#888888", what_color="#888888")
 
 # 여기에서부터 게임이 시작합니다.
 label start:
