@@ -191,6 +191,41 @@ init python:
     build.documentation('*.txt')
 
 
+# 이미지와 사운드 정의 #################################################################
+
+# 이미지 정의 (망상 배경)
+image bg_7f_mental = "images/7f_mental.png" # 7층 - 주인공 방
+image bg_6f_mental = "images/6f_mental.png" # 6층 - 괴물의 메시지 방
+image bg_5f_mental = "images/5f_mental.png" # 5층 - 거울이 있는 방
+image bg_4f_mental = "images/4f_mental.png" # 4층 - 잠긴 문과 음성기록 방
+image bg_3f_mental = "images/3f_mental.png" # 3층 - 괴물이 추격해오는 복도
+image bg_2f_mental = "images/2f_mental.png" # 2층 - 포럼 컴퓨터가 있는 방
+image bg_1f_mental = "images/1f_mental.png" # 1층 - 탈출 문
+
+# 이미지 정의 (현실 배경 - 진엔딩용)
+image bg_7f_reality = "images/7f_reality.png" # 7층 현실: 좁은 방, 침대와 문
+image bg_6f_reality = "images/6f_reality.png" # 6층 현실: 식탁 있는 주방, 편지 쪽지
+image bg_5f_reality = "images/5f_reality.png" # 5층 현실: 옷장 앞 거울, 약봉지
+image bg_4f_reality = "images/4f_reality.png" # 4층 현실: 욕실 앞, 좁은 문
+image bg_3f_reality = "images/3f_reality.png" # 3층 현실: 현관문 앞, 어머니의 그림자
+image bg_2f_reality = "images/2f_reality.png" # 2층 현실: 책상과 컴퓨터 화면
+image bg_1f_reality = "images/1f_reality.png" # 1층 현실: 잠긴 현관문
+
+# 사운드 정의
+define sfx_footsteps_creeping = "audio/sfx_footsteps_creeping.ogg" # 7층 발소리
+define sfx_clock_ticking = "audio/sfx_clock_ticking.ogg" # 7층 시계 초침 소리
+define sfx_alarm = "audio/sfx_alarm.ogg" # 1층 문 옆 경고등
+define sfx_monster_voice = "audio/sfx_monster_voice.ogg" # 괴물 목소리
+define sfx_screech = "audio/sfx_screech.ogg" # 괴물 등장 효과음
+define bgm_creepy = "audio/bgm_creepy.ogg" # 일반 배경음악
+define bgm_ending = "audio/bgm_ending.ogg" # 엔딩 테마 음악
+define sfx_plate_drop = "audio/sfx_plate_drop.ogg" # 식판 떨어지는 소리
+define sfx_crack = "audio/sfx_crack.ogg" # 거울 깨지는 소리
+define sfx_voice_recorder = "audio/sfx_voice_recorder.ogg" # 녹음기 소리
+define sfx_tear = "audio/sfx_tear.ogg" # 종이 찢는 소리
+define sfx_clue_gain = "audio/sfx_clue_gain.ogg" # 플래그 획득 소리
+
+
 ## 인앱 구매를 수행하려면 Google Play 라이선스 키가 필요합니다. Google Play 개
 ## 발자 콘솔의 '수익 창출' > '수익 창출 설정' > '라이선스'에서 찾을 수 있습니다.
 
