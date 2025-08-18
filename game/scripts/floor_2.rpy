@@ -13,21 +13,22 @@
 
 label floor_2:
     scene bg_2f_mental with dissolve
-    
+    # @@@@@@@ 이미지변경 필요
     "익숙한 복도 끝, 낡은 방이 하나 있다."
-    "안으로 들어가자, 전원이 켜진 채 빛을 내는 모니터 여러 대가 보인다."
+    "안으로 들어가자, 전원이 켜진 채 빛을 내는 노트북 한대가 보인다."
     "나는 홀린 듯이 화면 앞으로 다가갔다."
 
+    # (책상 위, 노트북 켜짐. 화면엔 게시판. 수많은 댓글들로 가득하다.)
     hide window
     show screen floor_2_comment_screen with dissolve
     pause
     hide screen floor_2_comment_screen with dissolve
     
-    n "익숙하다."
-    n "너무 익숙해서..."
-    n "마치 내가 쓴 것 같다."
+    "익숙하다."
+    "너무 익숙해서..."
+    "마치 내가 쓴 것 같다."
     "마우스를 움직인다."
-    n "IP 주소... 전부 동일하다."
+    "IP 주소... 전부 동일하다."
     m "넌... 널 속이고 있었어."
     
     menu:
@@ -39,13 +40,13 @@ label floor_2:
             jump bad_ending_2
 
 label check_logs:
-    n "댓글 작성자 모두 동일한 ID와 IP인 것을 확인했다."
-    n "모두 나였다."
+    # (댓글 작성자 모두 동일한 ID/IP 확인) @@@@ 이미지 필요
+    "모두 나였다."
 
     $ renpy.sound.play(sfx_clue_gain)
     $ flag_clue_5 = True
     jump floor_1
 
 label turn_off:
-    n "아무 일도 없던 것처럼..."
+    "아무 일도 없던 것처럼..."
     jump floor_1

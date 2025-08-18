@@ -21,25 +21,27 @@ screen floor_6_note_back_screen:
             color "#ffffff"
 
 label floor_6:
+    # (붉은 조명. 벽 가득 낙서. 쪽지가 바닥에 떨어져 있음)
     scene bg_6f_mental with dissolve
     
-    n "벽이 말을 걸고 있다."
-    n "기억 속 어딘가에서 본 듯한 문장들."
-    n "이건 내가 본 것이 아니라... 내가 쓴 것 같다."
+    "벽이 말을 걸고 있다."
+    "기억 속 어딘가에서 본 듯한 문장들."
+    "이건 내가 본 것이 아니라... 내가 쓴 것 같다."
 
-    "바닥의 쪽지를 줍는다."
+    # (바닥의 쪽지를 줍는다. 앞면 자동 노출)
 
     hide window
     show screen floor_6_note_front_screen with dissolve
     pause
     hide screen floor_6_note_front_screen with dissolve
 
-    n "낯설지 않다."
-    n "이 문장도... 이 종이의 질감도..."
-    n "모두 어디선가 느껴본 것 같다."
-    n "쪽지를 접어 올리려는 순간,"
-    n "손끝이 멈춘다."
-    n "이 쪽지... 정말, 끝까지 봐도 괜찮은 걸까?"
+    "낯설지 않다."
+    "이 문장도... 이 종이의 질감도..."
+    "모두 어디선가 느껴본 것 같다."
+    
+    "쪽지를 접어 올리려는 순간,"
+    "손끝이 멈춘다."
+    "이 쪽지... 정말, 끝까지 봐도 괜찮은 걸까?"
 
     menu:
         "뒷면까지 본다 (불길한 예감이 든다)":
@@ -55,12 +57,12 @@ label check_back_side:
     pause
     hide screen floor_6_note_back_screen with dissolve
 
-    n "...왜 내 글씨로 쓰여 있는 거지?"
+    "...왜 내 글씨로 쓰여 있는 거지?"
 
     $ renpy.sound.play(sfx_clue_gain)
     $ flag_clue_1 = True
     jump floor_5
 
 label cover_it:
-    n "괜히 건드리면 안 될 것 같았다."
+    "괜히 건드리면 안 될 것 같았다."
     jump floor_5
