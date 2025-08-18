@@ -1,5 +1,5 @@
 ﻿label floor_5:
-    # (방은 차가운 푸른 조명. 중앙에는 거울, 옆 탁자에 약통)
+    # 차가운 푸른 조명이 감도는 방. 중앙에 기이할 정도로 깨끗한 거울이 있고, 옆 탁자에는 약통이 있다.
     scene bg_5f_mental with dissolve
 
     "차가운 푸른빛이 감도는 방. 이전 층들의 비릿한 냄새 대신, 소독약 냄새 같은 것이 코를 찌른다."
@@ -34,6 +34,9 @@ label avoid_eyes:
     "나는 고개를 돌렸다. 하지만 거울 속의 '나'는 사라지지 않는다."
     "오히려 머릿속으로 파고들어와 나를 조롱한다. 시선을 피할 수 없어!"
     "정신을 차려야 해. 저건 내가 아니야. 저 눈을... 계속해서 피해야만 해."
+
+    # 미니게임: 시선 피하기
+    # $ minigame_result = renpy.call("call_minigame", "gaze")
 
     # 시선 피하기 미니게임 시작 (테스트용 분기)
     $ minigame_result = renpy.random.choice(["success", "fail"])

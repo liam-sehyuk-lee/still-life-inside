@@ -21,7 +21,7 @@ screen floor_6_note_back_screen:
             color "#ffffff"
 
 label floor_6:
-    # (붉은 조명. 벽 가득 낙서. 쪽지가 바닥에 떨어져 있음)
+    # 붉은 조명이 비추는 방. 벽에는 피 묻은 손으로 긁어낸 듯한 글씨들이 가득하다.
     scene bg_6f_mental with dissolve
     
     "이전 층과는 다른, 끈적하고 비릿한 공기가 폐부를 찌른다. 벽은 온통 붉은 조명에 젖어 있고..."
@@ -61,6 +61,9 @@ label floor_6:
 label check_back_side_6:
     "떨리는 손으로 쪽지를 뒤집었다. 하지만 그 순간, 글자들이 눈앞에서 조각나 흩어지는 것 같았다."
     "머리가 깨질 듯 아프다. 이 문장을... 내가 직접 완성해야만 해."
+
+    # 미니게임: 찢어진 쪽지 맞추기
+    # $ minigame_result = renpy.call("call_minigame", "note")
 
     # 조각난 문장 맞추기 미니게임 시작 (테스트용 분기)
     $ minigame_result = renpy.random.choice(["success", "fail"])

@@ -205,7 +205,15 @@ image bg_1f_mental = "images/bg_1f_mental.png" # 1층 - 탈출 문
 # 이미지 정의 (현실 배경 - 진엔딩용)
 image bg_reality_master = "images/bg_reality_master.png" # 잠긴 현실의 주인공 방
 
-# 사운드 정의
+# 이미지 정의 (미니게임)
+image minigame_bg = "images/minigame_bg.png" # 공통 미니게임 배경
+image minigame_gauge_thumb = "images/minigame_gauge_thumb.png" # 게이지 바 thumb 이미지
+image ip_trace_dot = "images/ip_trace_dot.png" # IP 추적용 점 이미지
+image ip_trace_dot_highlight = "images/ip_trace_dot_highlight.png" # IP 추적용 하이라이트 점 이미지
+image heart_beat_line = "images/heart_beat_line.png" # 심장박동 그래프 이미지
+image heart_beat_marker = "images/heart_beat_marker.png" # 심장박동 마커 이미지
+
+# 사운드 정의 (기본)
 define sfx_footsteps_creeping = "audio/sfx_footsteps_creeping.ogg" # 7층 발소리
 define sfx_clock_ticking = "audio/sfx_clock_ticking.ogg" # 7층 시계 초침 소리
 define sfx_alarm = "audio/sfx_alarm.ogg" # 1층 문 옆 경고등
@@ -218,6 +226,17 @@ define sfx_crack = "audio/sfx_crack.ogg" # 거울 깨지는 소리
 define sfx_voice_recorder = "audio/sfx_voice_recorder.ogg" # 녹음기 소리
 define sfx_tear = "audio/sfx_tear.ogg" # 종이 찢는 소리
 define sfx_clue_gain = "audio/sfx_clue_gain.ogg" # 플래그 획득 소리
+
+# 사운드 정의 (미니게임)
+define sfx_gauge_up = "audio/sfx_gauge_up.ogg" # 게이지 상승 효과음
+define sfx_gauge_down = "audio/sfx_gauge_down.ogg" # 게이지 하락 효과음
+define sfx_note_drop = "audio/sfx_note_drop.ogg" # 쪽지 떨어지는 효과음
+define sfx_line_match = "audio/sfx_line_match.ogg" # 선 연결 효과음
+define sfx_heartbeat = "audio/sfx_heartbeat.ogg" # 심장박동 소리
+define sfx_heartbeat_fast = "audio/sfx_heartbeat_fast.ogg" # 빨라진 심장박동 소리
+define sfx_radio_static = "audio/sfx_radio_static.ogg" # 라디오 노이즈 효과음
+define sfx_radio_tune_in = "audio/sfx_radio_tune_in.ogg" # 주파수 맞추는 효과음
+define sfx_puzzle_piece = "audio/sfx_puzzle_piece.ogg" # 퍼즐 조각 맞추는 효과음
 
 
 ## 인앱 구매를 수행하려면 Google Play 라이선스 키가 필요합니다. Google Play 개

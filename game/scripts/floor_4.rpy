@@ -12,7 +12,7 @@
             color "#ffffff"
 
 label floor_4:
-    # (철문 하나, 그 앞에 놓인 낡은 의자와 녹음기. 벽에는 전선이 늘어져 있고, 천장 조명이 깜빡인다.)
+    # 낡은 의자 위에 녹음기가 놓여있고, 천장 조명이 깜빡인다. 벽에는 전선이 뱀처럼 늘어져 있다.
     scene bg_4f_mental with dissolve
     
     "정적. 아무 소리도 들리지 않는다. 앞선 층들의 소음이 거짓말이었던 것처럼."
@@ -42,6 +42,9 @@ label floor_4:
 label play_recorder_4:
     "나는 떨리는 손으로 재생 버튼을 눌렀다. 스피커에서 '치직'거리는 소음이 터져 나왔다."
     "아무것도 들리지 않는 것 같지만, 이 노이즈 너머에 무언가 숨어있다. 집중해서... 진짜 '소리'를 찾아내야 해."
+
+    # 미니게임: 주파수 맞추기
+    # $ minigame_result = renpy.call("call_minigame", "frequency")
 
     # 주파수 맞추기 미니게임 시작 (테스트용 분기)
     $ minigame_result = renpy.random.choice(["success", "fail"])

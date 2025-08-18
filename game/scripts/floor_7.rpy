@@ -1,6 +1,7 @@
 ﻿label floor_7:
-    # (화면 어두운 방, 금속문 너머 발소리 점점 가까워짐. 숨소리, 시계 초침 소리 섞임)
+    # 어둡고 감금된 방. 금속문 너머로 발소리가 들리고, 주인공은 사육당하고 있다고 느낀다.
     scene bg_7f_mental with fade
+    # 금속문 너머 발소리 점점 가까워짐. 숨소리, 시계 초침 소리 섞임
     $ renpy.sound.play(sfx_footsteps_creeping, loop=False)
     $ renpy.sound.play(sfx_clock_ticking, loop=True)
 
@@ -21,7 +22,7 @@
     "이대로 끝낼 수도 있어."
     "문이 열리는 그 순간, 놈의 목을 잡을 수 있다면..."
 
-    # (문 아래 그림자가 멈춘다. 식판 그림자가 보임)
+    # 문 아래 그림자가 멈춘다. 식판 그림자가 보임
 
     menu:
         "조용히 기다린다":
@@ -32,14 +33,14 @@
 label wait_quietly_7:
     "나는 모든 소리를 죽이고, 숨마저 참았다."
     "문밖의 존재가 미세한 소리라도 알아채는 날에는..."
-    "모든 것이 끝장이다.
-    # 숨소리 참기 미니게임 시작"
-    # --- 미니게임 및 분기 처리 시작 ---
-    # 나중에 이 부분을 실제 미니게임(screen)으로 대체하게 됩니다.
-    # 지금은 임시로 선택지를 사용해 성공/실패를 시뮬레이션합니다.
+    "모든 것이 끝장이다."
+
+    # 미니게임: 숨소리 참기
+    # $ minigame_result = renpy.call("call_minigame", "breath")
     
     # 성공/실패를 랜덤으로 결정 (테스트용)
     $ minigame_result = renpy.random.choice(["success", "fail"])
+    
     if minigame_result == "success":
         "다행히... 아무 일도 일어나지 않았다. 소리가 멎는다."
         "문이 천천히 열렸다 닫히고, 식판이 남겨진다."

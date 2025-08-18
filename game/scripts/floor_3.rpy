@@ -1,5 +1,5 @@
 ﻿label floor_3:
-    # (긴 복도, 어둠 속 끝에서 흐릿한 형체가 보임. 발자국 소리, 점점 커짐)
+    # 길고 어두운 복도. 축축한 시멘트 바닥에 무언가 끌리는 소리가 들리고, 피와 녹이 섞인 냄새가 난다.
     scene bg_3f_mental with dissolve
     
     "길고 어두운 복도. 저 끝에서 무언가 오고 있다."
@@ -27,6 +27,9 @@ label hide_3:
     "나는 낡은 벽장 안으로 몸을 구겨 넣었다. 삐걱이는 소리가 날까 봐 심장이 철렁 내려앉았다."
     "나무 틈새로 복도를 엿보자, '그것'이 지나가고 있었다."
     "들키면 안 돼... 심장 소리마저 죽여야 한다."
+
+    # 미니게임: 심장박동 숨기기
+    # $ minigame_result = renpy.call("call_minigame", "heartbeat")
 
     # 심장박동 숨기기 미니게임 시작 (테스트용 분기)
     $ minigame_result = renpy.random.choice(["success", "fail"])

@@ -1,5 +1,5 @@
 ﻿label floor_1:
-    # (거대한 금속문. EXIT 사인 깜빡임. 문 앞, 피 묻은 손자국.)
+    # 거대한 금속문. 그 위에 'EXIT' 사인이 깜빡인다. 문 앞에는 피 묻은 손자국이 있다.
     scene bg_1f_mental with dissolve
     
     "EXIT."
@@ -58,6 +58,9 @@ label turn_back_1:
 label memory_puzzle_minigame_1:
     "모든 조각이 모였다. 이제... 이 끔찍한 기억을 내 손으로 완성해야만 한다."
     
+    # 미니게임: 기억의 퍼즐 완성하기
+    # $ minigame_result = renpy.call("call_minigame", "memory_puzzle")
+
     # 기억의 퍼즐 미니게임 시작 (테스트용 분기)
     $ minigame_result = renpy.random.choice(["success", "fail"])
 

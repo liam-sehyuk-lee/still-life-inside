@@ -33,6 +33,9 @@ screen true_ending_text():
             xalign 0.5
             yalign 0.5
 
+transform zoom_move(newzoom, newx, newy, t=1.0):
+    linear t zoom newzoom xalign newx yalign newy
+
 label real_world_7:
     # 모든 기억의 퍼즐을 맞춘 뒤, 시점은 천천히 '현실'의 방으로 돌아온다.
     # 망상 속 7층의 배경음악이 서서히 멎는다.
@@ -50,10 +53,7 @@ label real_world_7:
     "그저... 낡은 가구와 먼지가 전부인, 이 작은 방 하나뿐이었다."
     
     # 카메라는 방 중앙의 '방문'을 천천히 비춘다.
-    show bg_reality_master:
-        zoom 1.5
-        xalign 0.4 yalign 0.4
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(1.5, 0.4, 0.4, 1.0)
     
     "문은... 처음부터 굳게 닫혀 있었다."
     "내가 안에서 열지 않았고, 그 누구도 밖에서 들어오지 못했다."
@@ -64,10 +64,7 @@ label real_world_7:
 label real_world_6:
     # 카메라는 7층에서 비추던 문에서, 그 아래 바닥으로 천천히 이동한다.
     # 그곳은 어머니가 항상 식판과 메모를 놓아두던 자리다.
-    show bg_reality_master:
-        zoom 2.0
-        xalign 0.4 yalign 0.8
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(2.0, 0.4, 0.8, 1.0)
     
     "문 아래, 이 차가운 바닥 위에서..."
     "나는 매일같이 괴물이 보낸 '암호'를 기다렸다."
@@ -86,10 +83,7 @@ label real_world_6:
     
 label real_world_5:
     # 카메라는 문 앞에서부터 방의 오른쪽, 거울과 서랍장이 있는 곳으로 부드럽게 이동한다.
-    show bg_reality_master:
-        zoom 2.5
-        xalign 0.65 yalign 0.5
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(2.5, 0.65, 0.5, 1.0)
 
     "시선을 돌리자, 방 한쪽의 낡은 거울이 눈에 들어왔다."
     "망상 속에서 나를 비웃던 그 '눈'은..."
@@ -99,10 +93,7 @@ label real_world_5:
     "나는 나 자신을 괴물이라 여기며, 스스로를 얼마나 갉아먹고 있었던 걸까."
 
     # 카메라가 서랍장 위의 약으로 조금 더 다가간다.
-    show bg_reality_master:
-        zoom 3
-        xalign 0.99 yalign 0.6
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(3.0, 0.99, 0.6, 1.0)
 
     "그리고 그 옆... 내가 그토록 두려워하며 거부했던 약."
     "봉투에는 흐릿한 글씨로 이름이 적혀 있었다. '리스페리돈 1mg'."
@@ -113,10 +104,7 @@ label real_world_5:
     
 label real_world_4:
     # 카메라가 의자 위 작은 녹음기로 다가간다.
-    show bg_reality_master:
-        zoom 5
-        xalign 0.675 yalign 0.625
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(5.0, 0.675, 0.625, 1.0)
 
     "그리고 저 의자 위의 작은 녹음기."
     "망상 속에서, 나는 저 기계에서 흘러나오는 목소리를 항상 '괴물'의 것이라고 믿었다."
@@ -135,10 +123,7 @@ label real_world_4:
     
 label real_world_3:
     # 카메라는 방의 왼쪽에서 다시 중앙, 방문 앞으로 이동하며 문틈 아래를 비춘다.
-    show bg_reality_master:
-        zoom 2.5
-        xalign 0.4 yalign 0.9
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(2.5, 0.4, 0.9, 1.0)
 
     "망상 속에서 나를 쫓아오던 그 무겁던 발소리..."
     "축축하게 끌리던 소리와 비릿한 냄새..."
@@ -159,10 +144,7 @@ label real_world_3:
 
 label real_world_2:
     # 카메라는 문 앞에서 방의 왼쪽, 컴퓨터 책상으로 이동하며 모니터를 비춘다.
-    show bg_reality_master:
-        zoom 3
-        xalign 0 yalign 0.65
-    with MoveTransition(1.0)
+    show bg_reality_master at zoom_move(3.0, 0.0, 0.65, 1.0)
 
     "그리고 이곳."
     "이 작은 모니터 앞에서, 나는 세상과 싸우고 있다고 믿었다."
@@ -190,7 +172,9 @@ label real_world_1:
         crop None
         size None
         xalign 0.4 yalign 0.4
-        linear 3.0
+        linear 1.0
+
+    show bg_reality_master at zoom_move(1.0, 0.5, 0.5, 1.0)
 
     "결국... 모든 것은 이 방 안에서 시작되고, 이 방 안에서 끝났다."
     "망상 속에서 내가 열고자 했던 그 '탈출구'는..."

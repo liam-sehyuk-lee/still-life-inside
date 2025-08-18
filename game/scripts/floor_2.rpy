@@ -12,7 +12,7 @@ sometime5134: 함께 저항합시다.""":
             color "#ffffff"
 
 label floor_2:
-    # (책상 위, 노트북 켜짐. 화면엔 게시판. 수많은 댓글들로 가득하다.)
+    # 낡은 방. 책상 위에 노트북이 켜져 있고, 화면에는 '피해자'들의 절규가 담긴 게시판이 떠 있다.
     scene bg_2f_mental with dissolve
 
     "복도 끝에서 새어 나오는 희미한 불빛. 그곳에는 문이 반쯤 열린 방이 있었다."
@@ -47,6 +47,9 @@ label check_logs_2:
     "나는 떨리는 손으로 관리자 페이지에 접속했다."
     "마우스를 클릭하자, 화면의 로그들이 암호처럼 뒤섞이기 시작했다."
     "이 혼돈 속에서... 진실을 찾아내야 해. 같은 흔적을 모두 연결해야만 해."
+
+    # 미니게임: IP 주소 추적
+    # $ minigame_result = renpy.call("call_minigame", "ip_trace")
 
     # IP 주소 추적 미니게임 시작 (테스트용 분기)
     $ minigame_result = renpy.random.choice(["success", "fail"])
