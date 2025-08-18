@@ -78,7 +78,7 @@ screen bad_ending_2_text():
 label bad_ending_7:
     # (식판 떨어지는 소리 → 문 벌컥 → 괴물 손 등장 → 화면 급전환)
     $ renpy.sound.play(sfx_plate_drop)  # 식판 떨어지는 소리 효과음
-    show monster_hand with dissolve(0.1) # 괴물 손 이미지를 빠르게 보여줍니다.
+    # show monster_hand with dissolve(0.1) # 괴물 손 이미지를 빠르게 보여줍니다.
     "놈의 손이 내 목을 짓눌러온다. 나는... 다시 시작점에 갇혔다."
     hide window
     show screen bad_ending_7_text with dissolve

@@ -194,22 +194,16 @@ init python:
 # 이미지와 사운드 정의 #################################################################
 
 # 이미지 정의 (망상 배경)
-image bg_7f_mental = "images/7f_mental.png" # 7층 - 주인공 방
-image bg_6f_mental = "images/6f_mental.png" # 6층 - 괴물의 메시지 방
-image bg_5f_mental = "images/5f_mental.png" # 5층 - 거울이 있는 방
-image bg_4f_mental = "images/4f_mental.png" # 4층 - 잠긴 문과 음성기록 방
-image bg_3f_mental = "images/3f_mental.png" # 3층 - 괴물이 추격해오는 복도
-image bg_2f_mental = "images/2f_mental.png" # 2층 - 포럼 컴퓨터가 있는 방
-image bg_1f_mental = "images/1f_mental.png" # 1층 - 탈출 문
+image bg_7f_mental = "images/bg_7f_mental.png" # 7층 - 주인공 방
+image bg_6f_mental = "images/bg_6f_mental.png" # 6층 - 괴물의 메시지 방
+image bg_5f_mental = "images/bg_5f_mental.png" # 5층 - 거울이 있는 방
+image bg_4f_mental = "images/bg_4f_mental.png" # 4층 - 잠긴 문과 음성기록 방
+image bg_3f_mental = "images/bg_3f_mental.png" # 3층 - 괴물이 추격해오는 복도
+image bg_2f_mental = "images/bg_2f_mental.png" # 2층 - 포럼 컴퓨터가 있는 방
+image bg_1f_mental = "images/bg_1f_mental.png" # 1층 - 탈출 문
 
 # 이미지 정의 (현실 배경 - 진엔딩용)
-image bg_7f_reality = "images/7f_reality.png" # 7층 현실: 좁은 방, 침대와 문
-image bg_6f_reality = "images/6f_reality.png" # 6층 현실: 식탁 있는 주방, 편지 쪽지
-image bg_5f_reality = "images/5f_reality.png" # 5층 현실: 옷장 앞 거울, 약봉지
-image bg_4f_reality = "images/4f_reality.png" # 4층 현실: 욕실 앞, 좁은 문
-image bg_3f_reality = "images/3f_reality.png" # 3층 현실: 현관문 앞, 어머니의 그림자
-image bg_2f_reality = "images/2f_reality.png" # 2층 현실: 책상과 컴퓨터 화면
-image bg_1f_reality = "images/1f_reality.png" # 1층 현실: 잠긴 현관문
+image bg_reality_master = "images/bg_reality_master.png" # 잠긴 현실의 주인공 방
 
 # 사운드 정의
 define sfx_footsteps_creeping = "audio/sfx_footsteps_creeping.ogg" # 7층 발소리
