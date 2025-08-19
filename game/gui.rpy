@@ -93,6 +93,19 @@ define gui.main_menu_background = "gui/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
 
 
+## 미니게임 ######################################################################
+##
+## 미니게임에 사용되는 상호작용 및 시각적 요소의 이미지입니다.
+define gui.minigame_gauge_thumb = "gui/minigame/minigame_gauge_thumb.png" # 게이지 바 thumb 이미지
+define gui.ip_trace_dot = "gui/minigame/ip_trace_dot.png" # IP 추적용 점 이미지
+define gui.ip_trace_dot_highlight = "gui/minigame/ip_trace_dot_highlight.png" # IP 추적용 하이라이트 점 이미지
+define gui.heart_beat_line = "gui/minigame/heart_beat_line.png" # 심장박동 그래프 이미지
+define gui.heart_beat_marker = "gui/minigame/heart_beat_marker.png" # 심장박동 마커 이미지
+define gui.vthumb = "gui/minigame/vbar/vthumb.png" # 주파수 미니게임 수직 슬라이더 thumb 이미지
+define gui.gaze = "gui/minigame/gaze.png" # 시선 피하기 미니게임의 시선 이미지
+define gui.gaze_hover = "gui/minigame/gaze_hover.png" # 시선 이미지에 마우스 올렸을 때의 이미지
+
+
 ## 대사 ##########################################################################
 ##
 ## 이러한 변수들은 한 번에 한 줄의 대사가 어떻게 화면에 표시되는지 제어합니다.
