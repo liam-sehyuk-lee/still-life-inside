@@ -6,7 +6,9 @@
         yalign 0.5
         
         text """oymnipulator314: 나도 그들에게 사육당하고 있어.
+
 restores3421: 여긴 ZONE 12. 누구 있나요?
+
 sometime5134: 함께 저항합시다.""":
             size 50
             color "#ffffff"
@@ -49,7 +51,7 @@ label check_logs_2:
     "이 혼돈 속에서... 진실을 찾아내야 해. 같은 흔적을 모두 연결해야만 해."
 
     # 미니게임: IP 주소 추적
-    call screen minigame_breath
+    call screen minigame_ip
 
     if _return:
         "모두... 나였다. IP 주소가... 전부 동일하다."

@@ -1,62 +1,116 @@
-## minigame_heartbeat.rpy
+# minigame_heartbeat.rpy
+
+init python:
+    # --- 미니게임 설정 ---
+    HEARTBEAT_TIME_LIMIT = 20.0
+    HEARTBEAT_FILL_NORMAL = 5.0  # 평상시 게이지 증가 속도
+    HEARTBEAT_FILL_FAST = 15.0   # 위험 시 게이지 증가 속도
+    HEARTBEAT_DECAY_RATE = 20.0 # 클릭 시 게이지 감소 속도
+
+    # --- 미니게임 변수 ---
+    heartbeat_gauge = 0.0
+    heartbeat_timer = 0.0
+    mouse_is_down = False
+    heartbeat_is_fast = False
+    heartbeat_state_timer = 0.0
+    heartbeat_next_switch_time = 2.0
+    minigame_over = False
+    minigame_result = False
+
+    def minigame_heartbeat_update():
+        global heartbeat_timer, heartbeat_state_timer, heartbeat_is_fast, heartbeat_next_switch_time, heartbeat_gauge, mouse_is_down, minigame_over, minigame_result
+
+        if minigame_over:
+            return
+
+        dt = 0.01
+
+        # 1. 타이머 업데이트
+        heartbeat_timer -= dt
+        heartbeat_state_timer += dt
+
+        # 2. 심장박동 상태 변경 로직 (빠르게/느리게)
+        if heartbeat_state_timer >= heartbeat_next_switch_time:
+            if heartbeat_is_fast:
+                heartbeat_is_fast = False
+                heartbeat_next_switch_time = renpy.random.uniform(2.0, 5.0)
+            else:
+                heartbeat_is_fast = True
+                heartbeat_next_switch_time = renpy.random.uniform(0.5, 1.5)
+            heartbeat_state_timer = 0.0
+
+        # 3. 게이지 조절 로직
+        if heartbeat_is_fast:
+            heartbeat_gauge = min(100, heartbeat_gauge + HEARTBEAT_FILL_FAST * dt)
+        else:
+            heartbeat_gauge = min(100, heartbeat_gauge + HEARTBEAT_FILL_NORMAL * dt)
+
+        # 마우스를 누르면 게이지 감소
+        if mouse_is_down:
+            heartbeat_gauge = max(0, heartbeat_gauge - HEARTBEAT_DECAY_RATE * dt)
+
+        # 4. 승리/패배 판정
+        # 위험 상태에서 클릭하면 게임 오버
+        if heartbeat_is_fast and mouse_is_down:
+            minigame_result = False
+            minigame_over = True
+        # 시간이 끝나면 성공 (버티기)
+        elif heartbeat_timer <= 0:
+            minigame_result = True
+            minigame_over = True
+        # 게이지가 100%에 도달하면 실패
+        elif heartbeat_gauge >= 100:
+            minigame_result = False
+            minigame_over = True
+
+        renpy.restart_interaction()
 
 screen minigame_heartbeat():
-    style_prefix "minigame_heartbeat"
+    modal True
 
-    # 게임 변수 설정
-    default heartbeat_gauge = 25.0 # 심장박동 게이지 (0-100)
-    default is_calming = False # 심장박동을 진정시키는 상태
+    on "show":
+        action [
+            SetVariable("heartbeat_gauge", 0.0),
+            SetVariable("heartbeat_timer", HEARTBEAT_TIME_LIMIT),
+            SetVariable("mouse_is_down", False),
+            SetVariable("heartbeat_is_fast", False),
+            SetVariable("heartbeat_state_timer", 0.0),
+            SetVariable("heartbeat_next_switch_time", renpy.random.uniform(2.0, 5.0)),
+            SetVariable("minigame_over", False),
+            SetVariable("minigame_result", False)
+        ]
 
-    # 배경
-    add bg_minigame
-    
-    # 심장박동 사운드 시작
-    # on "show":
-    #     $ renpy.sound.play(sfx_heartbeat, channel="minigame_sfx", loop=True)
-        
-    # 심장박동 게이지 바
-    bar:
-        value heartbeat_gauge
-        range 100
-        xalign 0.5
-        yalign 0.9
-        xmaximum 800
-        thumb minigame_gauge_thumb
-        thumb_offset 20
-        style_group "heartbeat_gauge"
-            
-    # 게이지를 조절하는 플레이어의 조작
-    button:
-        xfill True
-        yfill True
-        action SetScreenVariable("is_calming", not is_calming)
+    key "mousedown_1" action SetVariable("mouse_is_down", True)
+    key "mouseup_1" action SetVariable("mouse_is_down", False)
 
-    # 게임 타이머 (20초) 및 성공 조건
-    timer 20.0 action Return(True) # 20초 동안 버티면 성공하고 True 반환
+    timer 0.01 repeat True action Function(minigame_heartbeat_update)
 
-    # 심장박동 변화 로직
-    # on "show":
-    #     $ renpy.restart_interaction()
+    timer 0.01 repeat True:
+        if minigame_over:
+            action Return(minigame_result)
 
-    python:
-        # 괴물이 지나가며 심장박동 게이지 증가
-        heartbeat_gauge += renpy.display.get_delta_time() * 2
+    add "black" alpha 0.7
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
 
-        # 마우스 클릭 상태에 따라 심장박동 조절
-        if is_calming:
-            heartbeat_gauge -= renpy.display.get_delta_time() * 3 # 진정시키기
-
-        # 게이지 값에 따라 스타일의 bar_color를 변경합니다.
-        if heartbeat_gauge > 80:
-            renpy.style.heartbeat_gauge_bar.bar_color = "#ff0000"
+        if heartbeat_is_fast:
+            text "위험! 숨소리를 죽여야 해!"
+            text "마우스를 누르지 마십시오.":
+                style "minigame_guide_text"
         else:
-            renpy.style.heartbeat_gauge_bar.bar_color = "#00ff00"
+            text "심장 박동을 늦춰야 해..."
+            text "클릭으로 게이지를 낮추세요.":
+                style "minigame_guide_text"
 
-        # 실패 조건 (심장박동이 너무 빨라지거나 너무 느려졌을 때)
-        if heartbeat_gauge >= 100 or heartbeat_gauge <= 0:
-            renpy.sound.stop(channel="minigame_sfx")
-            renpy.hide_screen("minigame_heartbeat")
-            renpy.jump("minigame_fail_heartbeat")
+        bar:
+            value heartbeat_gauge
+            range 100
+            xmaximum 800
+            ymaximum 30
+            left_bar Solid("#ff0000")
+            right_bar Solid("#444444")
 
-label minigame_fail_heartbeat:
-    return False
+        text "[max(0, heartbeat_timer):.1f]":
+            align (1.0, 0.5)
+            style "minigame_timer_text"

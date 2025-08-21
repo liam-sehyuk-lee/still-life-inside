@@ -204,7 +204,7 @@ image bg_1f_mental = "images/base/bg_1f_mental.png" # 1층 - 탈출 문
 image bg_reality_master = "images/base/bg_reality_master.png" # 잠긴 현실의 주인공 방
 
 # 이미지 정의 (미니게임)
-image bg_minigame = "images/minigame/bg_minigame.png" # 공통 미니게임 배경
+# image bg_minigame = "images/minigame/bg_minigame.png" # 공통 미니게임 배경
 image clue_1_note = "images/minigame/clue_1_note.png" # 6층: 찢어진 쪽지 맞추기
 image clue_2_gaze = "images/minigame/clue_2_gaze.png" # 5층: 시선 피하기
 image clue_3_recorder = "images/minigame/clue_3_recorder.png" # 4층: 주파수 맞추기

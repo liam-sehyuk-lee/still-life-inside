@@ -29,7 +29,7 @@ label hide_3:
     "들키면 안 돼... 심장 소리마저 죽여야 한다."
 
     # 미니게임: 심장박동 숨기기
-    call screen minigame_breath
+    call screen minigame_heartbeat
 
     if _return:
         "괴물이 지나갔다."

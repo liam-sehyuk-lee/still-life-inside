@@ -59,7 +59,7 @@ label memory_puzzle_minigame_1:
     "모든 조각이 모였다. 이제... 이 끔찍한 기억을 내 손으로 완성해야만 한다."
     
     # 미니게임: 기억의 퍼즐 완성하기
-    call screen minigame_breath
+    call screen minigame_puzzle
 
     if _return:
         "퍼즐이 맞춰졌다. 그래... 이게 바로 진실이었어."

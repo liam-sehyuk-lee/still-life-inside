@@ -1,49 +1,78 @@
-## minigame_frequency.rpy
+# minigame_frequency.rpy
+
+init python:
+    # --- 미니게임 설정 ---
+    FREQUENCY_TIME_LIMIT = 20.0
+    FREQUENCY_SUCCESS_RANGE = 0.05
+    FREQUENCY_ADJUST_RATE = 0.01 # 마우스 휠 스크롤당 막대가 움직이는 정도
+    
+    # --- 미니게임 변수 ---
+    frequency_gauge = 0.5
+    target_frequency = 0.0
+    frequency_timer = 0.0
+    minigame_over = False
+    minigame_result = False
+    
+    def minigame_frequency_update():
+        global frequency_timer, minigame_over, frequency_gauge, target_frequency, minigame_result
+
+        if minigame_over:
+            return
+
+        dt = 0.01
+
+        frequency_timer -= dt
+
+        # 승리/패배 조건 확인
+        if abs(frequency_gauge - target_frequency) <= FREQUENCY_SUCCESS_RANGE:
+            minigame_result = True
+            minigame_over = True
+        
+        elif frequency_timer <= 0:
+            minigame_result = False
+            minigame_over = True
+        
+        renpy.restart_interaction()
 
 screen minigame_frequency():
-    style_prefix "minigame_frequency"
+    modal True
     
-    # 게임 변수 설정
-    default frequency_value = 0.0
-    default target_frequency = 0.75 # 목표 주파수 값 (0.0 ~ 1.0)
-    default tolerance = 0.05 # 성공 범위 (타겟 값의 +- 0.05)
+    on "show":
+        action [
+            SetVariable("frequency_gauge", renpy.random.uniform(0.1, 0.9)),
+            SetVariable("target_frequency", renpy.random.uniform(0.1, 0.9)),
+            SetVariable("frequency_timer", FREQUENCY_TIME_LIMIT),
+            SetVariable("minigame_over", False),
+            SetVariable("minigame_result", False)
+        ]
 
-    # 배경 이미지
-    add bg_minigame
-    
-    # 주파수 슬라이더
-    vbar:
-        value Preference("frequency", frequency_value)
-        xalign 0.5
-        yalign 0.5
-        ysize 600
-        thumb "gui/vbar/vthumb.png"
+    key "mousedown_4" action SetVariable("frequency_gauge", min(1.0, frequency_gauge + FREQUENCY_ADJUST_RATE))
+    key "mousedown_5" action SetVariable("frequency_gauge", max(0.0, frequency_gauge - FREQUENCY_ADJUST_RATE))
+
+    timer 0.01 repeat True action Function(minigame_frequency_update)
+
+    timer 0.01 repeat True:
+        if minigame_over:
+            action Return(minigame_result)
         
-    # 게임 타이머 (30초)
-    timer 30.0 action Return(False) # 30초 내에 성공하지 못하면 실패
+    add "black" alpha 0.7
+    vbox:
+        align (0.5, 0.5)
+        spacing 20
 
-    # 게임 사운드 로직
-    # on "show":
-    #     $ renpy.sound.play(sfx_radio_static, channel="frequency", loop=True)
-    
-    python:
-        # 슬라이더 값에 따라 사운드 볼륨을 조절
-        freq_diff = abs(frequency_value - target_frequency)
-        if freq_diff <= tolerance:
-            # 성공 범위에 도달했을 때
-            renpy.sound.set_volume(1.0, channel="voice_recorder")
-            renpy.sound.set_volume(0.0, channel="frequency")
-            renpy.hide_screen("minigame_frequency")
-            renpy.jump("minigame_success_frequency")
-        else:
-            # 성공 범위 밖일 때, 노이즈 볼륨 조절
-            volume = min(1.0, freq_diff * 5)
-            renpy.sound.set_volume(volume, channel="frequency")
+        text "소리가 가장 명확해지는 주파수를 찾아내세요.":
+            style "minigame_guide_text"
+        text "마우스 휠을 돌려 주파수를 조절하세요.":
+            style "minigame_guide_text"
+
+        bar:
+            value frequency_gauge
+            range 1.0
+            xmaximum 800
+            ymaximum 30
+            left_bar Solid("#00aaff")  
+            right_bar Solid("#444444")
             
-# 숨겨진 음성 기록 사운드 (미니게임 시작 시 미리 로드)
-# init:
-    # $ renpy.sound.play(sfx_voice_recorder, channel="voice_recorder", loop=True)
-    # $ renpy.sound.set_volume(0.0, channel="voice_recorder")
-        
-label minigame_success_frequency:
-    return True
+        text "[max(0, frequency_timer):.1f]":
+            align (1.0, 0.5)
+            style "minigame_timer_text"

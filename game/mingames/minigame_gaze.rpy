@@ -108,6 +108,6 @@ screen minigame_gaze():
             ymaximum 30
             left_bar Solid("#00aaff")  
             right_bar Solid("#444444")
-        text "Time Left: [max(0, gaze_timer):.1f]s":
+        text "[max(0, gaze_timer):.1f]":
             align (1.0, 0.5)
             style "minigame_timer_text"
