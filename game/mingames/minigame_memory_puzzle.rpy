@@ -18,7 +18,7 @@ screen minigame_memory_puzzle():
     default current_index = 0
     
     # 배경
-    add minigame_bg
+    add bg_minigame
     
     # 퍼즐 조각
     frame:

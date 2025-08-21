@@ -36,12 +36,9 @@ label avoid_eyes:
     "정신을 차려야 해. 저건 내가 아니야. 저 눈을... 계속해서 피해야만 해."
 
     # 미니게임: 시선 피하기
-    # $ minigame_result = renpy.call("call_minigame", "gaze")
+    call screen minigame_gaze
 
-    # 시선 피하기 미니게임 시작 (테스트용 분기)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-
-    if minigame_result == "success":
+    if _return:
         "나는 아직... 괴물이 되고 싶지 않다."
         "가쁜 숨을 몰아쉬며 거울에서 완전히 등을 돌렸다. 등 뒤에서 느껴지는 사악한 시선이 점차 멀어진다."
 

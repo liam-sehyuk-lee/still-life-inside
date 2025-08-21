@@ -8,7 +8,7 @@ screen minigame_heartbeat():
     default is_calming = False # 심장박동을 진정시키는 상태
 
     # 배경
-    add minigame_bg
+    add bg_minigame
     
     # 심장박동 사운드 시작
     # on "show":

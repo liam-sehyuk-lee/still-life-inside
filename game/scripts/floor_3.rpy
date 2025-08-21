@@ -29,12 +29,9 @@ label hide_3:
     "들키면 안 돼... 심장 소리마저 죽여야 한다."
 
     # 미니게임: 심장박동 숨기기
-    # $ minigame_result = renpy.call("call_minigame", "heartbeat")
+    call screen minigame_breath
 
-    # 심장박동 숨기기 미니게임 시작 (테스트용 분기)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-
-    if minigame_result == "success":
+    if _return:
         "괴물이 지나갔다."
         "심장이 터질 듯이 뛰고, 몸이 떨렸다."
         "나는 한참이 지나서야 조심스럽게 벽장에서 빠져나왔다."

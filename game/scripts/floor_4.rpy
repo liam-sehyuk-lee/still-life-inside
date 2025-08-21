@@ -44,12 +44,9 @@ label play_recorder_4:
     "아무것도 들리지 않는 것 같지만, 이 노이즈 너머에 무언가 숨어있다. 집중해서... 진짜 '소리'를 찾아내야 해."
 
     # 미니게임: 주파수 맞추기
-    # $ minigame_result = renpy.call("call_minigame", "frequency")
+    call screen minigame_breath
 
-    # 주파수 맞추기 미니게임 시작 (테스트용 분기)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-
-    if minigame_result == "success":
+    if _return:
         "녹음기를 재생하자, 4층 전체를 울리는 목소리가 들려왔다."
         
         hide window

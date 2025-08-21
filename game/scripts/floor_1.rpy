@@ -59,12 +59,9 @@ label memory_puzzle_minigame_1:
     "모든 조각이 모였다. 이제... 이 끔찍한 기억을 내 손으로 완성해야만 한다."
     
     # 미니게임: 기억의 퍼즐 완성하기
-    # $ minigame_result = renpy.call("call_minigame", "memory_puzzle")
+    call screen minigame_breath
 
-    # 기억의 퍼즐 미니게임 시작 (테스트용 분기)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-
-    if minigame_result == "success":
+    if _return:
         "퍼즐이 맞춰졌다. 그래... 이게 바로 진실이었어."
         jump real_world_7
     else:

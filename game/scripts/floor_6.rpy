@@ -63,12 +63,9 @@ label check_back_side_6:
     "머리가 깨질 듯 아프다. 이 문장을... 내가 직접 완성해야만 해."
 
     # 미니게임: 찢어진 쪽지 맞추기
-    # $ minigame_result = renpy.call("call_minigame", "note")
+    call screen minigame_note
 
-    # 조각난 문장 맞추기 미니게임 시작 (테스트용 분기)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-
-    if minigame_result == "success":
+    if _return:
         hide window
         show screen floor_6_note_back_screen with dissolve
         pause

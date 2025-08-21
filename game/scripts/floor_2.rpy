@@ -49,12 +49,9 @@ label check_logs_2:
     "이 혼돈 속에서... 진실을 찾아내야 해. 같은 흔적을 모두 연결해야만 해."
 
     # 미니게임: IP 주소 추적
-    # $ minigame_result = renpy.call("call_minigame", "ip_trace")
+    call screen minigame_breath
 
-    # IP 주소 추적 미니게임 시작 (테스트용 분기)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-
-    if minigame_result == "success":
+    if _return:
         "모두... 나였다. IP 주소가... 전부 동일하다."
         "화면의 모든 닉네임이 내 이름으로 바뀌는 환상을 보았다. 위로도, 저항도, 모두 나 혼자만의 독백이었다."
 

@@ -9,7 +9,7 @@ screen minigame_frequency():
     default tolerance = 0.05 # 성공 범위 (타겟 값의 +- 0.05)
 
     # 배경 이미지
-    add minigame_bg
+    add bg_minigame
     
     # 주파수 슬라이더
     vbar:

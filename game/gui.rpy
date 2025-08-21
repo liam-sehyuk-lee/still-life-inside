@@ -102,8 +102,8 @@ define gui.ip_trace_dot_highlight = "gui/minigame/ip_trace_dot_highlight.png" # 
 define gui.heart_beat_line = "gui/minigame/heart_beat_line.png" # 심장박동 그래프 이미지
 define gui.heart_beat_marker = "gui/minigame/heart_beat_marker.png" # 심장박동 마커 이미지
 define gui.vthumb = "gui/minigame/vbar/vthumb.png" # 주파수 미니게임 수직 슬라이더 thumb 이미지
-define gui.gaze = "gui/minigame/gaze.png" # 시선 피하기 미니게임의 시선 이미지
-define gui.gaze_hover = "gui/minigame/gaze_hover.png" # 시선 이미지에 마우스 올렸을 때의 이미지
+define gui.gaze_normal = "gui/minigame/gaze_normal.png" # 시선 피하기 미니게임의 시선 이미지
+define gui.gaze_bright = "gui/minigame/gaze_bright.png" # 시선 피하기 미니게임의 시선 이미지
 
 
 ## 대사 ##########################################################################

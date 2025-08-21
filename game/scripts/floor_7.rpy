@@ -36,12 +36,9 @@ label wait_quietly_7:
     "모든 것이 끝장이다."
 
     # 미니게임: 숨소리 참기
-    # $ minigame_result = renpy.call("call_minigame", "breath")
-    
-    # 성공/실패를 랜덤으로 결정 (테스트용)
-    $ minigame_result = renpy.random.choice(["success", "fail"])
-    
-    if minigame_result == "success":
+    call screen minigame_breath
+     
+    if _return:
         "다행히... 아무 일도 일어나지 않았다. 소리가 멎는다."
         "문이 천천히 열렸다 닫히고, 식판이 남겨진다."
         "오늘도... 그냥 지나갔다."

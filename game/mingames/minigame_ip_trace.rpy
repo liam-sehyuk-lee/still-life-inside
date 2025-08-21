@@ -16,7 +16,7 @@ screen minigame_ip_trace():
     default connected_pairs = []
     
     # 배경 이미지
-    add minigame_bg
+    add bg_minigame
 
     # IP 주소 텍스트와 연결점 (dot) 버튼
     # fixed:
