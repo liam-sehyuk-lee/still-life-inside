@@ -80,8 +80,7 @@ label bad_ending_7:
     $ renpy.music.play(bgm_ending_bad, fadein=1.0, loop=False)
     $ renpy.sound.play(sfx_plate_drop)
     n "으아악! 들켰어...!"
-    m "하하. 괜찮아. 놈들의 규칙에 굴복한 것뿐이야. 다음에 또 기회가 올 거야. 이젠 정말로 괜찮아."
-    "나는 이겼다고 믿었지만... 결국 다시 같은 자리로 돌아왔다."
+    m "하하. 괜찮아. 넌 그저 놈들의 함정에 굴복했을 뿐이야. 다음에 또 기회가 올 거야. 넌 여기서 안전하니까. 이젠 정말로 괜찮아."
     hide window
     show screen bad_ending_7_text with dissolve
     pause
@@ -141,7 +140,7 @@ label bad_ending_4:
     m "안 돼! 그 문을 열지 마!"
     "숨겨진 문이 열린다. 차가운 손이 내 목을 움켜쥐었다."
     n "으아악! 이게... 이게 너의 진짜 모습이야?"
-    m "하하... 결국 놈들에게 잡히고 말았군. 어쩔 수 없어. 문 뒤의 공포는 늘 예상할 수 없는 법이니까."
+    m "하하... 어쩔 수 없어. 결국 넌... 이 공포를 끝내지 못했군. 이 모든 건 놈들이 네게 바라는 거야."
     hide window
     show screen bad_ending_4_text with dissolve
     pause
