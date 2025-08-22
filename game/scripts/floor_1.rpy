@@ -59,6 +59,8 @@ label memory_puzzle_minigame_1:
     if _return:
         "퍼즐이 맞춰졌다. 조각들이 하나가 되자, 온몸에 소름이 돋았다."
         n "그래... 이게... 바로 진실이었어."
+        # 진엔딩, '???'의 왜곡된 목소리
+        $ renpy.sound.play(sfx_voice_m_distorted, loop=False)
         m "아니야... 말도 안 돼... 이럴 리가 없어...!"
         "내 안의 또 다른 목소리가 발악한다. 그것은 나의 기억이 아닌, 나의 두려움이었다. 나는 더 이상 그 목소리에 굴복하지 않았다."
         jump real_world_7

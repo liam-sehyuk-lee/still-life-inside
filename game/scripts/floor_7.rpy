@@ -5,7 +5,7 @@
     scene bg_7f_mental with fade
     # 금속문 너머 발소리 점점 가까워짐. 숨소리, 시계 초침 소리 섞임
     $ renpy.sound.play(sfx_footsteps_creeping, loop=False)
-    $ renpy.sound.play(sfx_clock_ticking, loop=True)
+    $ renpy.sound.play(sfx_clock_ticking, loop=False)
 
     "또 그 시간이다. 째깍이는 시계 소리가 내 심장 소리인지, 진짜 시계 소리인지 이제는 구분조차 가지 않는다."
     "문밖에서 들려오는 저 발소리. 셀 수 없이 많은 날 동안 나를 사육해 온 '그것'의 소리다."
@@ -40,10 +40,13 @@ label wait_quietly_7:
     m "진정해. 놈들은 우리가 무너지길 바라고 있어. 우리가 이기려면, 이 소리에 굴복하면 안 돼."
 
     # 미니게임: 숨소리 참기
+    $ renpy.sound.play(sfx_breathing_heavy, loop=False)
     call screen minigame_breath
      
     if _return:
         "다행히... 아무 일도 일어나지 않았다. 소리가 멎는다."
+        # 문이 삐걱이는 소리
+        $ renpy.sound.play(sfx_door_creak, loop=False)
         "문이 천천히 열렸다 닫히고, 식판이 남겨진다."
         "오늘도... 그냥 지나갔다."
         n "휴... 살았다. 우리가 해냈어."

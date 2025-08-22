@@ -244,29 +244,21 @@ define bgm_ending_bad = "audio/bgm/eb_DARKNESS-sevie13.mp3"                     
 define bgm_ending = "audio/bgm/et_Acceptance-AloneInTheUniverse.mp3"                                # 트루엔딩: 모든 것을 받아들이는 고요하고 벅찬 분위기
 
 
-
-# 사운드 정의 (기본)
-define sfx_footsteps_creeping = "audio/base/sfx_footsteps_creeping.ogg" # 7층 발소리
-define sfx_clock_ticking = "audio/base/sfx_clock_ticking.ogg" # 7층 시계 초침 소리
-define sfx_alarm = "audio/base/sfx_alarm.ogg" # 1층 문 옆 경고등
-define sfx_monster_voice = "audio/base/sfx_monster_voice.ogg" # 괴물 목소리
-define sfx_screech = "audio/base/sfx_screech.ogg" # 괴물 등장 효과음
-define sfx_plate_drop = "audio/base/sfx_plate_drop.ogg" # 식판 떨어지는 소리
-define sfx_crack = "audio/base/sfx_crack.ogg" # 거울 깨지는 소리
-define sfx_voice_recorder = "audio/base/sfx_voice_recorder.ogg" # 녹음기 소리
-define sfx_tear = "audio/base/sfx_tear.ogg" # 종이 찢는 소리
-define sfx_clue_gain = "audio/base/sfx_clue_gain.ogg" # 플래그 획득 소리
-
-# 사운드 정의 (미니게임)
-define sfx_gauge_up = "audio/minigame/sfx_gauge_up.ogg" # 게이지 상승 효과음
-define sfx_gauge_down = "audio/minigame/sfx_gauge_down.ogg" # 게이지 하락 효과음
-define sfx_note_drop = "audio/minigame/sfx_note_drop.ogg" # 쪽지 떨어지는 효과음
-define sfx_line_match = "audio/minigame/sfx_line_match.ogg" # 선 연결 효과음
-define sfx_heartbeat = "audio/minigame/sfx_heartbeat.ogg" # 심장박동 소리
-define sfx_heartbeat_fast = "audio/minigame/sfx_heartbeat_fast.ogg" # 빨라진 심장박동 소리
-define sfx_radio_static = "audio/minigame/sfx_radio_static.ogg" # 라디오 노이즈 효과음
-define sfx_radio_tune_in = "audio/minigame/sfx_radio_tune_in.ogg" # 주파수 맞추는 효과음
-define sfx_puzzle_piece = "audio/minigame/sfx_puzzle_piece.ogg" # 퍼즐 조각 맞추는 효과음
+## 사운드 효과
+define sfx_clue_gain = "audio/sfx/sfx_clue_gain.mp3"                                # 2, 3, 4, 5, 6층에서 단서 획득 시
+define sfx_footsteps_creeping = "audio/sfx/sfx_footsteps_creeping.mp3"              # 7층, 문 너머에서 들려오는 발소리
+define sfx_clock_ticking = "audio/sfx/sfx_clock_ticking.mp3"                        # 7층, 시계 초침 소리
+define sfx_plate_drop = "audio/sfx/sfx_plate_drop.mp3"                              # 배드엔딩 7, 식판이 떨어지는 소리
+define sfx_tear = "audio/sfx/sfx_tear.mp3"                                          # 배드엔딩 6, 쪽지를 찢는 소리
+define sfx_monster_voice = "audio/sfx/sfx_monster_voice.mp3"                        # 배드엔딩 5-1, 괴물의 속삭임
+define sfx_crack = "audio/sfx/sfx_crack.mp3"                                        # 배드엔딩 5-2, 거울이 깨지는 소리
+define sfx_screech = "audio/sfx/sfx_screech.mp3"                                    # 배드엔딩 3, 4, 괴물의 비명 소리
+define sfx_door_creak = "audio/sfx/sfx_door_creak.mp3"                              # 3층, 벽장 문이 삐걱이는 소리
+define sfx_heartbeat_fast = "audio/sfx/sfx_heartbeat_fast.mp3"                      # 3, 5층 등 긴장된 순간
+define sfx_breathing_heavy = "audio/sfx/sfx_breathing_heavy.mp3"                    # 3, 7층 등 긴장된 순간
+define sfx_light_flicker = "audio/sfx/sfx_light_flicker.mp3"                        # 4층, 조명이 깜빡이는 소리
+define sfx_static_noise = "audio/sfx/sfx_static_noise.mp3"                          # 4층, 녹음기에서 나는 잡음
+define sfx_voice_m_distorted = "audio/sfx/sfx_voice_m_distorted.mp3"                # 진엔딩, '???'의 왜곡된 목소리
 
 
 ## 인앱 구매를 수행하려면 Google Play 라이선스 키가 필요합니다. Google Play 개

@@ -23,6 +23,7 @@ label floor_2:
     m "함정일지도 몰라. 놈들이 우리를 끌어들이려는 걸지도. 조심해야 해."
     n "아니. 여기는 뭔가 달라. 책상 위에... 노트북이 켜져 있어."
     "나는 홀린 듯이 화면 앞으로 다가갔다. 화면 가득한 것은 나와 같은 '피해자'들의 절규였다."
+    
     hide window
     show screen floor_2_comment_screen with dissolve
     pause
@@ -56,7 +57,8 @@ label check_logs_2:
     
     if _return:
         "나타난 것은 단 하나의 닉네임. 내가 늘 사용하던... 그 닉네임이었다."
-        $ renpy.sound.play(sfx_clue_gain)
+        # 단서 획득 소리
+        $ renpy.sound.play(sfx_clue_gain, loop=False)
         $ flag_clue_5 = True
         
         n "말도 안 돼... 이 모든 글을... 내가 썼다고?"
@@ -65,6 +67,8 @@ label check_logs_2:
         m "놈들의 시스템이 우리를 조롱하는 거야! 우리가 찾은 단서들을 파괴하려는 거라고! 어서 이 방을 벗어나자!"
         jump floor_1
     else:
+        # 잡음
+        $ renpy.sound.play(sfx_static_noise, loop=False)
         "손가락이 미끄러졌다. 화면이 깜빡이더니, 모든 로그가 뒤엉키며 아무것도 볼 수 없게 되었다."
         "진실은... 다시 저 너머로 도망쳤다."
         n "아... 젠장... 우리가 중요한 단서를 놓쳤어..."

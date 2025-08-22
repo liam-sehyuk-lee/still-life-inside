@@ -44,7 +44,7 @@ screen ending_partial_truth_text():
 
 label ending_normal:
     # 일반엔딩: 약간의 불안감이 남는 희망적 분위기
-    $ renpy.music.play(bgm_ending_normal, fadein=1.0, loop=False)
+    $ renpy.music.play(bgm_ending_normal, fadein=1.0, loop=True)
     scene black with fade
     n "우리가 이겼어. 드디어... 문이 열리고 밖으로 나왔어."
     m "그래. 드디어 자유야! 이 붉은 빛이 눈부시지만, 이보다 더 좋을 순 없어!"
@@ -52,6 +52,8 @@ label ending_normal:
     m "더 이상 의심하지 마. 넌 해냈어. 우린 이겼다고!"
     
     "나는 '???'의 말을 믿기로 했다. 끝없이 나를 지탱해 주었던 목소리. 그 목소리가 옳았을 것이다."
+    # 심장 박동 소리
+    $ renpy.sound.play(sfx_heartbeat_fast, loop=False)
     "하지만 발걸음을 옮길 때마다, 심장이 불안하게 쿵쿵거렸다. 나는 이 승리가, 그리고 이 자유가... 진짜인지 확신할 수 없었다."
     
     hide window
@@ -63,7 +65,7 @@ label ending_normal:
 
 label ending_flickering_memory:
     # 엇나간 기억: 몽환적이고 미스터리한 분위기
-    $ renpy.music.play(bgm_ending_flickering, fadein=1.0, loop=False)
+    $ renpy.music.play(bgm_ending_flickering, fadein=1.0, loop=True)
     scene black with fade
     "문 너머에 닿는 순간, 잊고 싶었던 기억의 한 조각이 스쳐 지나간다."
     "나는 그 의미를 알지 못했지만..."
@@ -83,7 +85,7 @@ label ending_flickering_memory:
 
 label ending_uncertain_realization:
     # 불완전한 탈출: 불안하고 긴장감이 유지되는 분위기
-    $ renpy.music.play(bgm_ending_uncertain, fadein=1.0, loop=False)
+    $ renpy.music.play(bgm_ending_uncertain, fadein=1.0, loop=True)
     scene black with fade
     n "문이 열렸다. 나는 탈출했지만... 이 승리가 진짜인지 확신할 수 없어."
     m "왜 그래? 우린 해냈어! 이제 자유야! 불안해하지 마!"
@@ -102,7 +104,7 @@ label ending_uncertain_realization:
 
 label ending_partial_truth:
     # 감춰진 진실: 음산하고 불길한 분위기
-    $ renpy.music.play(bgm_ending_partial, fadein=1.0, loop=False)
+    $ renpy.music.play(bgm_ending_partial, fadein=1.0, loop=True)
     scene black with fade
     n "나는 문을 열고 밖으로 나섰다. 그리고... 내가 본 것은, 폐허가 된 병원이었다."
     m "봐. 드디어 알게 되었어! 모든 것은 놈들이 만든 가짜 감옥이었던 거야!"

@@ -24,6 +24,10 @@
     m "그건 가짜 평화야. 우리가 함께 싸우기로 했잖아. 놈들의 속임수에 넘어가지 마."
     
     "무릎이 떨린다. 심장은 빨라지는데, 머리는... 멈췄다."
+    # 긴장된 순간의 심장 소리 및 숨소리 추가
+    $ renpy.sound.play(sfx_heartbeat_fast, loop=False)
+    $ renpy.sound.play(sfx_breathing_heavy, loop=False)
+
     menu:
         "약을 먹는다 (더 이상 두려움을 느끼고 싶지 않다)":
             "나는 주저 없이 약통을 열었다. 놈들이 놓은 독이든, 아니든 상관없었다. 이 공포를 끝낼 수만 있다면."
@@ -51,7 +55,8 @@ label avoid_eyes:
         "가쁜 숨을 몰아쉬며 거울에서 완전히 등을 돌렸다. 등 뒤에서 느껴지는 사악한 시선이 점차 멀어진다."
         n "해냈어... 우리가 이겼어."
         m "그래. 놈들은 네게 진실을 보여주려 했지만, 너는 굴복하지 않았어. 잘했어."
-        $ renpy.sound.play(sfx_clue_gain)
+        # 단서 획득 소리
+        $ renpy.sound.play(sfx_clue_gain, loop=False)
         $ flag_clue_2 = True
         jump floor_4
     else:

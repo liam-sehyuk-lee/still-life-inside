@@ -76,10 +76,13 @@ label check_back_side_6:
         m "말도 안 돼! 분명 다른 누군가 썼어! 놈들이 우리 기억을 조작하는 거야! 속으면 안 돼!"
         n "이 쪽지는 내가... 내가 쓴 거야. 왜지?"
         m "제발 믿지 마! 놈들의 함정이야! 우린 같이 탈출해야 해!"
-        $ renpy.sound.play(sfx_clue_gain)
+        # 단서 획득 소리
+        $ renpy.sound.play(sfx_clue_gain, loop=False)
         $ flag_clue_1 = True
         jump floor_5
     else:
+        # 깨지는 소리
+        $ renpy.sound.play(sfx_crack, loop=False)
         "머릿속에서 무언가 '툭'하고 끊어졌다. 쪽지의 글자도, 내 기억의 조각들도... 산산이 흩어져 사라져간다."
         m "젠장... 실패야. 중요한 단서를 놓쳤어."
         n "아...아니야... 내 기억...!"

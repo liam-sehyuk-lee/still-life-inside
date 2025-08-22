@@ -20,6 +20,9 @@ label floor_4:
     n "여긴... 너무 조용해. 앞선 층들의 소음이 다 사라졌어."
     m "함정일 거야. 소리 없는 침묵은 더 위험해. 놈들은 우리를 덫으로 유인하고 있어."
     
+    # 조명이 깜빡이는 소리
+    $ renpy.sound.play(sfx_light_flicker, loop=False)
+
     "천장의 조명이 위태롭게 깜빡이며 긴 그림자를 만들고, 벽에는 용도를 알 수 없는 전선들이 뱀처럼 늘어져 있다."
     
     n "이 침묵 속엔 뭔가 숨어있어. 비명조차 삼켜버릴 듯한 불길한 침묵."
@@ -42,6 +45,8 @@ label floor_4:
             jump floor_3
             
 label play_recorder_4:
+    # 녹음기에서 나는 잡음
+    $ renpy.sound.play(sfx_static_noise, loop=False)
     # 미니게임: 주파수 맞추기
     call screen minigame_frequency
 
@@ -57,8 +62,8 @@ label play_recorder_4:
         m "아니야! 아냐! 그건 네 목소리가 아니야! 놈들이 조작한 거라고! 가짜야! 다 가짜야!"
         n "아냐... 이건 내 목소리가 맞아! 녹음기 속 목소리가... 나에게 '문은 열면 안 돼'라고 말하고 있어!"
         m "이 모든 건 거짓이야! 놈들이... 놈들이 우리를 갈라놓으려 하고 있어! 믿지 마! 제발 나를 믿어줘! 우리가 함께 만들어온 이 시간마저... 거짓이라고 생각하는 거야?"
-        
-        $ renpy.sound.play(sfx_clue_gain)
+        # 단서 획득 소리
+        $ renpy.sound.play(sfx_clue_gain, loop=False)
         $ flag_clue_3 = True
         jump floor_3
     else:
