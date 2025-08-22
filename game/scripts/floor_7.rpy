@@ -1,4 +1,6 @@
 ﻿label floor_7:
+    # 7층: 불안하고 불길한 분위기
+    $ renpy.music.play(bgm_floor_7_suspense, fadein=1.0, loop=True)
     # 어둡고 감금된 방. 금속문 너머로 발소리가 들리고, 주인공은 사육당하고 있다고 느낀다.
     scene bg_7f_mental with fade
     # 금속문 너머 발소리 점점 가까워짐. 숨소리, 시계 초침 소리 섞임

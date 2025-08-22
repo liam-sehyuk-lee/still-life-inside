@@ -1,4 +1,6 @@
 ﻿label floor_3:
+    # 3층: 긴박하고 공포스러운 분위기
+    $ renpy.music.play(bgm_floor_3_chase, fadein=1.0, loop=True)
     # 길고 어두운 복도. 축축한 시멘트 바닥에 무언가 끌리는 소리가 들리고, 피와 녹이 섞인 냄새가 난다.
     scene bg_3f_mental with dissolve
     

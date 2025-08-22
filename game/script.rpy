@@ -3,8 +3,8 @@ define m = Character('???', color="#b28cbe", what_color="#b28cbe")
 
 label start:
     scene black with fade
-
-    $ renpy.music.play("bgm_intro.ogg")
+    # 인트로 BGM
+    $ renpy.music.play(bgm_intro)
 
     "이젠 거의 리듬처럼 익숙해진다."
     "저 소리."

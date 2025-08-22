@@ -1,4 +1,6 @@
 ﻿label floor_1:
+    # 1층: 클라이맥스를 향해 고조되는 분위기
+    $ renpy.music.play(bgm_floor_1_climax, fadein=1.0, loop=True)
     # 거대한 금속문. 그 위에 'EXIT' 사인이 깜빡인다. 문 앞에는 피 묻은 손자국이 있다.
     scene bg_1f_mental with dissolve
     

@@ -161,6 +161,8 @@ label real_world_1:
     jump true_ending
     
 label true_ending:
+    # 모든 것을 받아들이는 고요하고 벅찬 분위기
+    $ renpy.music.play(bgm_ending, fadein=2.0, loop=False)
     # 카메라는 1층의 문을 비춘 채 잠시 멈춘다. 그리고 천천히, 모든 것이 어둠 속으로 사라진다.
     scene black with Dissolve(3.0)
 
@@ -172,12 +174,9 @@ label true_ending:
     "괜찮아."
     "이제... 정말로 괜찮아."
     
-    # 엔딩 테마 음악 시작. 화면 암전. 천천히 타이틀 출력
     hide window
     show screen true_ending_text with dissolve
-    $ renpy.music.play(bgm_ending)
-
     pause 5.0
     hide screen true_ending_text with dissolve
-
+    $ renpy.music.stop(fadeout=2.0)
     return

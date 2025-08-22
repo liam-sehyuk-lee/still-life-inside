@@ -12,6 +12,8 @@
             color "#ffffff"
 
 label floor_4:
+    # 4층: 정적이고 불안한 분위기
+    $ renpy.music.play(bgm_floor_4_silent, fadein=1.0, loop=True)
     # 낡은 의자 위에 녹음기가 놓여있고, 천장 조명이 깜빡인다. 벽에는 전선이 뱀처럼 늘어져 있다.
     scene bg_4f_mental with dissolve
     

@@ -1,0 +1,28 @@
+bgm_intro: Scary Horror Music-DELOSound
+
+bgm_floor_7_suspense: Horror Tension Suspense-DELOSound
+
+bgm_floor_6_creepy: Scary Horror Creepy Music-lNPLUSMUSIC
+
+bgm_floor_5_cold: cold is comming-Clavier-Music
+
+bgm_floor_4_silent: Horror Tension-DELOSound
+
+bgm_floor_3_chase: Silent Chase-rvlsiva
+
+bgm_floor_2_mystery: Mystery Horror-Universfield
+
+bgm_floor_1_climax: Climax and climax-Naciux5
+
+
+bgm_ending_normal: Piano Score-Longing Hope Sonican
+
+bgm_ending_flickering: Nature Dreamscape-Universfield
+
+bgm_ending_uncertain: Suspense Tense Music Background-SigmaMusicArt
+
+bgm_ending_partial: Ominous Horror Music Background-Cyberwave-Orchestra
+
+bgm_ending_bad: DARKNESS-sevie13
+
+bgm_ending_true: Acceptance-AloneInTheUniverse

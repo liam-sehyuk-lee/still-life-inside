@@ -193,23 +193,57 @@ init python:
 
 # 이미지와 사운드 정의 #################################################################
 
-# 이미지 정의 (기본)
-image bg_7f_mental = "images/base/bg_7f_mental.png" # 7층 - 주인공 방
-image bg_6f_mental = "images/base/bg_6f_mental.png" # 6층 - 괴물의 메시지 방
-image bg_5f_mental = "images/base/bg_5f_mental.png" # 5층 - 거울이 있는 방
-image bg_4f_mental = "images/base/bg_4f_mental.png" # 4층 - 잠긴 문과 음성기록 방
-image bg_3f_mental = "images/base/bg_3f_mental.png" # 3층 - 괴물이 추격해오는 복도
-image bg_2f_mental = "images/base/bg_2f_mental.png" # 2층 - 포럼 컴퓨터가 있는 방
-image bg_1f_mental = "images/base/bg_1f_mental.png" # 1층 - 탈출 문
-image bg_reality_master = "images/base/bg_reality_master.png" # 잠긴 현실의 주인공 방
+# 이미지 (배경)
+image bg_7f_mental = "images/bg/bg_7f_mental.png" # 7층 - 주인공 방
+image bg_6f_mental = "images/bg/bg_6f_mental.png" # 6층 - 괴물의 메시지 방
+image bg_5f_mental = "images/bg/bg_5f_mental.png" # 5층 - 거울이 있는 방
+image bg_4f_mental = "images/bg/bg_4f_mental.png" # 4층 - 잠긴 문과 음성기록 방
+image bg_3f_mental = "images/bg/bg_3f_mental.png" # 3층 - 괴물이 추격해오는 복도
+image bg_2f_mental = "images/bg/bg_2f_mental.png" # 2층 - 포럼 컴퓨터가 있는 방
+image bg_1f_mental = "images/bg/bg_1f_mental.png" # 1층 - 탈출 문
+image bg_reality_master = "images/bg/bg_reality_master.png" # 잠긴 현실의 주인공 방
 
-# 이미지 정의 (미니게임)
-# image bg_minigame = "images/minigame/bg_minigame.png" # 공통 미니게임 배경
+# 이미지 (미니게임)
 image clue_1_note = "images/minigame/clue_1_note.png" # 6층: 찢어진 쪽지 맞추기
 image clue_2_gaze = "images/minigame/clue_2_gaze.png" # 5층: 시선 피하기
 image clue_3_recorder = "images/minigame/clue_3_recorder.png" # 4층: 주파수 맞추기
 image clue_4_heartbeat = "images/minigame/clue_4_heartbeat.png" # 3층: 심장박동 숨기기
 image clue_5_ip = "images/minigame/clue_5_ip.png" # 2층: IP 주소 추적
+
+
+# BGM (Background Music) 정의
+# 게임의 전체 분위기를 조성하는 배경음악 파일들을 정의합니다.
+# 파일 경로는 Ren'Py 프로젝트의 'audio/bgm/' 폴더를 기준으로 합니다.
+
+# 인트로 BGM
+define bgm_intro = "audio/bgm/i_Scary Horror Music-DELOSound.mp3"                                   # 게임 시작 시 재생되는 인트로 음악
+
+# 층별 BGM
+# 각 층의 심리적, 물리적 분위기를 반영하는 배경음악입니다.
+define bgm_floor_7_suspense = "audio/bgm/f7_Horror Tension Suspense-DELOSound.mp3"                  # 7층: 불안하고 불길한 분위기
+define bgm_floor_6_creepy = "audio/bgm/f6_Scary Horror Creepy Music-lNPLUSMUSIC.mp3"                # 6층: 기괴하고 혼란스러운 분위기
+define bgm_floor_5_cold = "audio/bgm/f5_cold is comming-Clavier-Music.mp3"                          # 5층: 차갑고 몽환적인 분위기
+define bgm_floor_4_silent = "audio/bgm/f4_Horror Tension-DELOSound.mp3"                             # 4층: 정적이고 불안한 분위기
+define bgm_floor_3_chase = "audio/bgm/f3_Silent Chase-rvlsiva.mp3"                                  # 3층: 긴박하고 공포스러운 분위기
+define bgm_floor_2_mystery = "audio/bgm/f2_Mystery Horror-Universfield.mp3"                         # 2층: 미스터리하고 의심스러운 분위기
+define bgm_floor_1_climax = "audio/bgm/f1_Climax and climax-Naciux5.mp3"                            # 1층: 클라이맥스를 향해 고조되는 분위기
+
+# 일반 엔딩 BGM
+# 진실의 일부만 마주하고 끝나는 엔딩의 분위기를 표현합니다.
+define bgm_ending_normal = "audio/bgm/en_Piano Score-Longing Hope Sonican.mp3"                      # 일반엔딩: 약간의 불안감이 남는 희망적 분위기
+define bgm_ending_flickering = "audio/bgm/ef_Nature Dreamscape-Universfield.mp3"                    # 엇나간 기억: 몽환적이고 미스터리한 분위기
+define bgm_ending_uncertain = "audio/bgm/eu_Suspense Tense Music Background-SigmaMusicArt.mp3"      # 불완전한 탈출: 불안하고 긴장감이 유지되는 분위기
+define bgm_ending_partial = "audio/bgm/ep_Ominous Horror Music Background-Cyberwave-Orchestra.mp3"  # 감춰진 진실: 음산하고 불길한 분위기
+
+# 배드 엔딩 BGM
+# 비극적인 결말에 따른 절망감과 공포를 강조합니다.
+define bgm_ending_bad = "audio/bgm/eb_DARKNESS-sevie13.mp3"                                         # 모든 배드 엔딩을 아우르는 BGM
+
+# 트루 엔딩 BGM
+# 모든 진실을 깨달은 후의 감동적이고 차분한 분위기를 표현합니다.
+define bgm_ending = "audio/bgm/et_Acceptance-AloneInTheUniverse.mp3"                                # 트루엔딩: 모든 것을 받아들이는 고요하고 벅찬 분위기
+
+
 
 # 사운드 정의 (기본)
 define sfx_footsteps_creeping = "audio/base/sfx_footsteps_creeping.ogg" # 7층 발소리
@@ -217,8 +251,6 @@ define sfx_clock_ticking = "audio/base/sfx_clock_ticking.ogg" # 7층 시계 초�
 define sfx_alarm = "audio/base/sfx_alarm.ogg" # 1층 문 옆 경고등
 define sfx_monster_voice = "audio/base/sfx_monster_voice.ogg" # 괴물 목소리
 define sfx_screech = "audio/base/sfx_screech.ogg" # 괴물 등장 효과음
-define bgm_creepy = "audio/base/bgm_creepy.ogg" # 일반 배경음악
-define bgm_ending = "audio/base/bgm_ending.ogg" # 엔딩 테마 음악
 define sfx_plate_drop = "audio/base/sfx_plate_drop.ogg" # 식판 떨어지는 소리
 define sfx_crack = "audio/base/sfx_crack.ogg" # 거울 깨지는 소리
 define sfx_voice_recorder = "audio/base/sfx_voice_recorder.ogg" # 녹음기 소리

@@ -1,4 +1,6 @@
 ﻿label floor_5:
+    # 5층: 차갑고 몽환적인 분위기
+    $ renpy.music.play(bgm_floor_5_cold, fadein=1.0, loop=True)
     # 차가운 푸른 조명이 감도는 방.
     scene bg_5f_mental with dissolve
     # 중앙에 기이할 정도로 깨끗한 거울이 있고, 옆 탁자에는 약통이 있다.

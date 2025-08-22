@@ -14,6 +14,8 @@ sometime5134: 함께 저항합시다.""":
             color "#ffffff"
 
 label floor_2:
+    # 2층: 미스터리하고 의심스러운 분위기
+    $ renpy.music.play(bgm_floor_2_mystery, fadein=1.0, loop=True)
     # 낡은 방. 책상 위에 노트북이 켜져 있고, 화면에는 '피해자'들의 절규가 담긴 게시판이 떠 있다.
     scene bg_2f_mental with dissolve
 

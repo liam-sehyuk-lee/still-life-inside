@@ -21,6 +21,8 @@ screen floor_6_note_back_screen:
             color "#ffffff"
 
 label floor_6:
+    # 6층: 기괴하고 혼란스러운 분위기
+    $ renpy.music.play(bgm_floor_6_creepy, fadein=1.0, loop=True)
     # 붉은 조명이 비추는 방.
     scene bg_6f_mental with dissolve
     
