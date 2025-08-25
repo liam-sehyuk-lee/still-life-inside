@@ -110,8 +110,8 @@ label bad_ending_5_1:
     # 괴물의 속삭임
     $ renpy.sound.play(sfx_monster_voice, loop=False)
     scene black with Dissolve(0.5)
-    n "마음이... 편안해져. 두렵지 않아..."
-    m "그래. 이제는... 안심해도 돼. 놈들의 공포는 사라졌어. 우리가 함께니까."
+    n "마음이... 편안해져. 더는... 두렵지 않아."
+    m "그래. 이제 아무도 널 해치지 못해. 이 방에 영원히... 우리만 있을 테니까."
     "괴물의 속삭임이 귓가에 맴돈다. 나는... 더 이상 두려움을 느끼지 않아."
     hide window
     show screen bad_ending_5_1_text with dissolve
@@ -127,7 +127,7 @@ label bad_ending_5_2:
     $ renpy.sound.play(sfx_crack, loop=False)
     n "이 지옥을 끝내겠어!"
     m "네가... 놈들의 진실을 부숴버렸어! 이젠 더 이상 놈들의 속임수에 넘어갈 일은 없을 거야...!"
-    "거울을 깼다. 내 모습이 끔찍하게 산산조각 났다."
+    "거울을 깼다. 산산조각 난 것은 거울이 아니었다. 내가 마주해야 했던 현실의 나 자신이었다."
     n "아... 내 모습이...!"
     hide window
     show screen bad_ending_5_2_text with dissolve
